@@ -4,6 +4,16 @@ module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'rettid',
     environment: environment,
+    contentSecurityPolicy: {
+    'default-src': "'none'",
+    'script-src': "'self' 'unsafe-inline' 'unsafe-eval'",
+    'font-src': "'self'",
+    'connect-src': "'self' http://www.reddit.com/ https://www.reddit.com",
+    'img-src': "'self' https://b.thumbs.redditmedia.com https://i.imgur.com https://a.thumbs.redditmedia.com https://imgur.com ",
+    'report-uri':"'localhost'",
+    'style-src': "'self' 'unsafe-inline'",
+    'frame-src': "'none'"
+    },
     baseURL: '/',
     locationType: 'auto',
     EmberENV: {
