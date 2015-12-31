@@ -14,8 +14,8 @@ You will need the following things properly installed on your computer.
 
 ## Installation
 
-* `https://github.com/Nayed/rettid.git` this repository
-* change into the new directory
+* `git clone https://github.com/Nayed/rettid.git`
+* `cd rettid`
 * `npm install`
 * `bower install`
 
