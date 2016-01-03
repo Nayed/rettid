@@ -1,0 +1,35 @@
+{
+  "name": "rettid",
+  "version": "1.0.0",
+  "description": "reddit clone.. or sort of",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nayed/rettid.git"
+  },
+  "author": "Nayed Saïd Ali",
+  "license": "MIT",
+  "scripts": {
+    "dev": "webpack-dev-server --inline --hot --watch"
+  },
+  "devDependencies": {
+    "babel-core": "^6.3.17",
+    "babel-loader": "^6.2.0",
+    "babel-plugin-transform-runtime": "^6.3.13",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-runtime": "^6.2.0",
+    "css-loader": "^0.23.0",
+    "style-loader": "^0.13.0",
+    "vue-hot-reload-api": "^1.2.2",
+    "vue-html-loader": "^1.0.0",
+    "vue-loader": "^7.2.0",
+    "webpack": "^1.12.9",
+    "webpack-dev-server": "^1.14.0"
+  },
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "lightbox2": "^2.8.2",
+    "vue": "^1.0.11",
+    "vue-resource": "^0.1.17",
+    "vue-router": "^0.7.7"
+  }
+}
