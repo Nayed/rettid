@@ -2,7 +2,7 @@
     <h1>Image Subreddit Gallery</h1>
     
     <p v-for="link in links">
-        <a :href="'r/' + link">r/{{link}}</a>
+        <a :href="'#!/r/' + link">r/{{link}}</a>
     </p>
 </template>
 
@@ -14,6 +14,7 @@
             }
         },
         methods: {
+            
         }
     }
 </script>
