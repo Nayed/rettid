@@ -4,19 +4,16 @@
     <br/>
     <br/>
 
-    <div v-for="pics in getImg(sub)">
+    <div v-for="pics in getImg(sub)" track-by="$index">
         <div class="img">
-            <!--{{ pics }} -->
             <a href="{{pics}}" data-lightbox="{{pics}}">
-                <img src="{{pics}}" width="110" height="90" >
+                <img v-bind:src="pics" width="110" height="90" >
             </a>
         </div>
     </div>
 </template>
 
 <script>
-
-    import VerEx from 'verbal-expressions'
 
     export default {
         data() {
@@ -27,16 +24,21 @@
         },
         methods: {
             getImg(sub) {
-                //return 'niozn' + sub
                 this.$http.get(`https://www.reddit.com/r/${sub}.json`, data => {
                     this.img = data
                 })
                 .error(err => console.log(err))
 
-                let truthy = /(http:\/\/i\.imgur\.com\/[a-zA-Z0-9]+\.jpg)/g
+                let truthy = this.sub === 'reactiongifs' ? /(http:\/\/i\.imgur\.com\/[a-zA-Z0-9]+\.gif)/g : /(http:\/\/i\.imgur\.com\/[a-zA-Z0-9]+\.jpg)/g
 
-                console.log(JSON.stringify(this.img).match(truthy))
-                return JSON.stringify(this.img).match(truthy)
+                let arr = []
+
+                let rep = JSON.stringify(this.img).match(truthy).map(pic => {
+                    if (!arr.includes(pic)) {
+                        arr.push(pic)
+                    }
+                })
+                return arr
             }
         }
     }
