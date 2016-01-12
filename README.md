@@ -8,4 +8,4 @@ sudo npm install
 sudo npm run dev
 ```
 
-And then go to htpp://localhost:8080
+And then go to http://localhost:8080
